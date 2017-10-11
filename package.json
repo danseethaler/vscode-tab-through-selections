@@ -14,6 +14,7 @@
     "onCommand:extension.finalSelection"
   ],
   "main": "./extension",
+  "icon": "tab_through_selections.png",
   "contributes": {
     "keybindings": [
       {
