@@ -1,0 +1,95 @@
+{
+  "name": "tab-through-selections",
+  "displayName": "tab-through-selections",
+  "description": "Tab through your current multi-select",
+  "version": "0.0.1",
+  "publisher": "danseethaler",
+  "engines": {
+    "vscode": "^1.17.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [
+    "onCommand:extension.start",
+    "onCommand:extension.backOffSelection",
+    "onCommand:extension.finalSelection"
+  ],
+  "main": "./extension",
+  "contributes": {
+    "keybindings": [
+      {
+        "command": "extension.start",
+        "key": "ctrl+shift+u",
+        "mac": "cmd+shift+u",
+        "when": "editorHasMultipleSelections"
+      },
+      {
+        "command": "extension.next",
+        "key": "tab",
+        "mac": "tab",
+        "when": "tabbingThroughSelections"
+      },
+      {
+        "command": "extension.previous",
+        "key": "shift+tab",
+        "mac": "shift+tab",
+        "when": "tabbingThroughSelections"
+      },
+      {
+        "command": "extension.reset",
+        "key": "escape",
+        "mac": "escape",
+        "when": "tabbingThroughSelections"
+      },
+      {
+        "command": "extension.backOffSelection",
+        "key": "shift+escape",
+        "mac": "shift+escape",
+        "when": "editorHasMultipleSelections"
+      },
+      {
+        "command": "extension.finalSelection",
+        "key": "ctrl+escape",
+        "mac": "ctrl+escape",
+        "when": "editorHasMultipleSelections"
+      }
+    ],
+    "commands": [
+      {
+        "command": "extension.start",
+        "title": "Start tabbing through selections!"
+      },
+      {
+        "command": "extension.next",
+        "title": "Next Selection"
+      },
+      {
+        "command": "extension.previous",
+        "title": "Previous Selection"
+      },
+      {
+        "command": "extension.reset",
+        "title": "Reset Selections"
+      },
+      {
+        "command": "extension.backOffSelection",
+        "title": "Back Off Selection"
+      },
+      {
+        "command": "extension.finalSelection",
+        "title": "Get Final Selection"
+      }
+    ]
+  },
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "typescript": "^2.5.2",
+    "vscode": "^1.1.5",
+    "mocha": "^3.5.0",
+    "eslint": "^4.6.1",
+    "@types/node": "^7.0.0",
+    "@types/mocha": "^2.2.42"
+  }
+}
