@@ -2,7 +2,7 @@
   "name": "tab-through-selections",
   "displayName": "tab-through-selections",
   "description": "Tab through your current multi-select",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "danseethaler",
   "engines": {
     "vscode": "^1.17.0"
