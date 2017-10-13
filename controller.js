@@ -56,6 +56,10 @@ module.exports = {
       editor.selections.length - 1
     )
     editor.selections = newSelections
+
+    // Scroll to range of final selection
+    const finalSelection = newSelections[newSelections.length - 1]
+    editor.revealRange(finalSelection)
   },
   finalSelection: function(editor) {
     // Select only the last selection
